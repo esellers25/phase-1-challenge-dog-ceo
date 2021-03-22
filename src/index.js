@@ -7,7 +7,6 @@ let dogBreeds = document.querySelector("#dog-breeds")
 fetch("https://dog.ceo/api/breeds/image/random/4" )
     .then(res => res.json())
     .then(function(dogPictures) {
-        console.log(dogPictures)
         let messages = dogPictures.message
         messages.forEach(function(){
             let dogImage = document.createElement("img")
@@ -24,13 +23,17 @@ fetch("https://dog.ceo/api/breeds/image/random/4" )
 fetch("https://dog.ceo/api/breeds/list/all")
     .then(res => res.json())
     .then(function(dogList){
-        console.log(dogList)
-        let breeds = dogList.message
-        let breed = breeds[object]
-        breed.forEach(function(){
+        for (const message in dogList) {
+        let breed = (dogList[message]) 
+            console.log(breed)
             let dogLi = document.createElement("li")
-             dogLi.innerText = breed
-             dogBreeds.append(dogLi)
-        })
+            dogLi.innerText = breed
+            dogBreeds.append(dogLi)
+        }    
+            
+        
+        
     })
 
+ 
+    
