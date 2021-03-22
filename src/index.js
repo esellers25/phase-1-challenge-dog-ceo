@@ -24,6 +24,7 @@ fetch("https://dog.ceo/api/breeds/image/random/4" )
     
 fetch("https://dog.ceo/api/breeds/list/all")
     .then(res => res.json())
+<<<<<<< HEAD
     .then(function(dogList) {
         let breeds = (Object.keys(dogList.message))
             breeds.forEach(function(breed){
@@ -36,3 +37,20 @@ fetch("https://dog.ceo/api/breeds/list/all")
                  })
                 })
             })      
+=======
+    .then(function(dogList){
+        for (const message in dogList) {
+        let breed = (dogList[message]) 
+            console.log(breed)
+            let dogLi = document.createElement("li")
+            dogLi.innerText = breed
+            dogBreeds.append(dogLi)
+        }    
+            
+        
+        
+    })
+
+ 
+    
+>>>>>>> d3db9a532f4e806557d6f7b9f58367f08d9fec66
